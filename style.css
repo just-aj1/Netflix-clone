@@ -1,0 +1,473 @@
+:root {
+    --primary-color: #e50914;
+    --text-color: #ffffff;
+    --secondary-color: #000000;
+    --tertiary-color: #221f1f;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+svg {
+    fill: var(--primary-color);
+    width: 10%;
+}
+
+button {
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: var(--primary-color);
+    border-radius: 3px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 90%;
+    padding: 2rem;
+    margin: 10px;
+}
+
+.hero {
+    position: relative;
+    color: var(--text-color);
+    width: 100%;
+    height: 90vh;
+    background: url('the_netflix_login_background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.169);
+    box-shadow: inset 120px 100px 250px rgb(0, 0, 0), inset -120px -100px 250px rgb(0, 0, 0);
+}
+
+.information {
+    padding: 4rem;
+    width: 50%;
+    height: 50vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.information p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .25rem;
+    width: auto;
+}
+
+.nav {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: -webkit-box;
+    display: -webkit-flex;
+    border-top: solid .25rem rgba(255, 0, 0, 0.78);
+    border-top-left-radius: 40% 40%;
+    border-top-right-radius: 40% 40%;
+    border-bottom: 2px var(--tertiary-color);
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    width: min(90%, 1200px);
+}
+
+.nav .slider-container {
+    margin-top: 6rem;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    /* position: relative; */
+    width: min(80vw, 1200px);
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-inline: auto;
+    overflow-x: auto;
+    anchor-name: --slider;
+    scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* .slider::scroll-button(right),
+.slider::scroll-button(left) {
+    position: fixed;
+    position-anchor: --slider;
+    position-area: right center;
+    z-index: 2;
+    content: ">";
+    color: white;
+    background-color: #1A1333;
+    height: 300px;
+    width: 25px;
+    border-radius: 10px;
+ } */
+
+
+/* .slider::scroll-button(left) {
+    content: "<";
+    position-area: left center;
+
+}
+
+.slider::scroll-button(right):disabled,
+.slider::scroll-button(left):disabled {
+    display: none;
+} */
+
+.slider .card {
+    position: relative;
+}
+
+.slider h3 {
+    position: fixed;
+    position-area: top left;
+    z-index: 400;
+
+
+}
+
+.card {
+    /* flex: 0 0 20rem; */
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.card img {
+    width: 12rem;
+    border-radius: 0.5rem;
+    height: 15rem;
+}
+
+.container {
+    display: flex;
+    gap: 1rem;
+    margin: auto;
+    width: min(80%, 1200px);
+}
+
+.title {
+    margin-left: 8rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    box-sizing: border-box;
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    background-color: #1A1333;
+    color: #fff;
+    width: 100%;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.feature * {
+    margin-left: 1.5rem;
+}
+
+.feature div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.feature svg {
+    width: 100px;
+}
+
+.faq {
+    max-width: 100%;
+    margin: .35rem;
+    padding: 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+details {
+    background: #303030;
+    color: white;
+    margin: 10px 0;
+    margin-inline: 7rem;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+summary {
+    font-weight: bold;
+    position: relative;
+    padding-right: 30px;
+    list-style: none;
+}
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+}
+
+details[open] summary::after {
+    content: "×";
+    /* Change + to X when open */
+}
+
+details p {
+    margin-top: 10px;
+    color: #ddd;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    width: 75vw;
+
+}
+
+.box p {
+    font-size: large;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0.534);
+    border: 2px solid var(--tertiary-color);
+    border-radius: 3px;
+    padding: 1rem;
+    width: 25vw;
+}
+
+.email {
+    justify-self: center;
+    align-items: center;
+}
+
+.email>button {
+    padding: 1rem;
+}
+
+footer p {
+    padding-left: 2.3rem;
+    margin-inline: auto;
+    color: rgb(145, 145, 145);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    margin-inline: auto;
+    color: #303030;
+}
+
+li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: lightgray;
+}
+
+/* media Queries */
+@media screen and (max-width: 768px) {
+    header {
+        width: 90%;
+    }
+
+    .information {
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .information h1 {
+        font-size: 1.5rem;
+    }
+
+    .information p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .register {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .card img {
+        width: 8rem;
+        height: 10rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        width: min(90%, 1200px);
+    }
+
+    .title {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .faq details {
+        margin-inline: 2rem;
+    }
+
+    .box {
+        width: 90vw;
+    }
+
+    input {
+        width: 50vw;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        width: 85%;
+    }
+
+    .information h1 {
+        font-size: 1.2rem;
+    }
+
+    .information p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .card img {
+        width: 6rem;
+        height: 8rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: auto;
+        width: min(90%, 1200px);
+    }
+
+    .title {
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .faq details {
+        margin-inline: 1rem;
+    }
+
+    .box {
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        width: 70vw;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
