@@ -43,7 +43,10 @@ button {
     color: var(--text-color);
     text-decoration: none;
     border: var(--primary-color);
-    border-radius: 3px;
+    border-style: solid;
+    border-width: 0.0625rem;
+    border-radius: calc(0.25rem - 0.0625rem);
+    border-color: rgba(0, 0, 0, 0);
 }
 
 header {
@@ -56,6 +59,20 @@ header {
     width: 90%;
     padding: 2rem;
     margin: 10px;
+}
+
+header a {
+    width: 94%;
+    font-weight: 700;
+}
+
+body>header>a>svg {
+    width: 18%;
+    height: 12%;
+}
+
+.header button {
+    width: 100%;
 }
 
 .hero {
@@ -106,12 +123,26 @@ header {
     margin-bottom: 1rem;
 }
 
+.information button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-top: 8px;
+    width: 30%;
+}
+
+.information input {
+    padding: 1rem;
+    width: 70%;
+}
+
 .register {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: .25rem;
-    width: auto;
+    width: 100%;
 }
 
 .nav {
@@ -148,11 +179,11 @@ header {
     scroll-behavior: smooth;
 }
 
-.slider::-webkit-scrollbar {
+/* .slider::-webkit-scrollbar {
     display: none;
 }
 
-/* .slider::scroll-button(right),
+.slider::scroll-button(right),
 .slider::scroll-button(left) {
     position: fixed;
     position-anchor: --slider;
@@ -164,10 +195,10 @@ header {
     height: 300px;
     width: 25px;
     border-radius: 10px;
- } */
+}
 
 
-/* .slider::scroll-button(left) {
+.slider::scroll-button(left) {
     content: "<";
     position-area: left center;
 
@@ -184,7 +215,7 @@ header {
 
 .slider h3 {
     position: fixed;
-    position-area: top left;
+    /* position-area: top left; */
     z-index: 400;
 
 
@@ -278,10 +309,12 @@ summary::after {
     position: absolute;
     right: 0;
     font-size: 24px;
+    /* transition: transform 0.3s ease, opacity 0.3s ease; */
 }
 
 details[open] summary::after {
     content: "×";
+    /* transform: rotate(180deg); */
     /* Change + to X when open */
 }
 
@@ -307,9 +340,9 @@ details p {
 input {
     background-color: rgba(0, 0, 0, 0.534);
     border: 2px solid var(--tertiary-color);
-    border-radius: 3px;
+    border-radius: 0.6rem;
     padding: 1rem;
-    width: 25vw;
+    width: 90%;
 }
 
 .email {
@@ -341,10 +374,118 @@ li a:hover {
     color: lightgray;
 }
 
+.sign-in {
+    padding: 6rem 3rem;
+    margin: 2rem;
+    width: min(80%, 25rem);
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+}
+
+.sign-in input {
+    margin-bottom: 1rem;
+}
+
+.sign-in button {
+    width: 100%;
+    border-radius: calc(0.1875rem);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.code {
+    background-color: rgb(86, 85, 84);
+    margin-top: 0;
+}
+
+.buttons>a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.checkbox {
+    display: flex;
+    width: 50%;
+    /* height: 10%; */
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+}
+
+.new {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: start;
+    margin-top: 0.2rem;
+    padding: 0;
+}
+
+input[type="checkbox"] {
+    width: 15%;
+    margin-bottom: 0;
+}
+
+
+.sign-up {
+    padding: 6rem 3rem;
+    margin: 2rem;
+    width: min(80%, 25rem);
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+}
+
+#create {
+    width: 100%;
+    border-radius: calc(0.1875rem);
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
 /* media Queries */
 @media screen and (max-width: 768px) {
     header {
-        width: 90%;
+        width: 82%;
+    }
+
+    body>header>a>svg {
+        width: 23%;
+        height: 26%;
+    }
+
+    body>header>div>button {
+        width: 103%;
     }
 
     .information {
@@ -413,11 +554,45 @@ li a:hover {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
+
+    buttons {
+        width: 50vw;
+    }
+
+    a {
+        width: 100%;
+    }
+
+    body>section.hero>div>div>button {
+        width: 100%;
+    }
+
+    body>section.hero>div>div {
+        width: 70%;
+    }
+
+    body>section.hero>div>div>input[type=email] {
+        width: 94%;
+    }
 }
 
 @media screen and (max-width: 480px) {
     header {
-        width: 85%;
+        width: 78%;
+    }
+
+    body>header>a {
+        width: 88%;
+        height: 100%;
+    }
+
+    body>header>a>svg {
+        width: 28%;
+        height: 70%;
+    }
+
+    body>header>div>button {
+        width: 110%;
     }
 
     .information h1 {
